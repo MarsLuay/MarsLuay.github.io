@@ -1,135 +1,46 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mars Luay</title>
 
-    <!-- Tailwind CDN for utility classes -->
-    <link rel="stylesheet" href="./dist/style.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
 
-    <!-- Custom fonts -->
-    <style>
-      @font-face 
-      {
-          font-family: 'Open Sans';
-          font-weight: 100 900;
-          font-style: normal;
-          font-display: swap;
-          src: url('/fonts/OpenSans/OpenSans-VariableFont_wdth,wght.ttf') format('truetype');
-      }
+<body>
+    <div id="cursorBubble"></div>
 
-      /* Static-fallbacks (optional) */
-      @font-face 
-      {
-          font-family: 'Open Sans';
-          font-weight: 400;
-          font-style: normal;
-          font-display: swap;
-          src: url('/fonts/OpenSans/static/OpenSans-Regular.ttf') format('truetype');
-      }
-      @font-face 
-      {
-          font-family: 'Open Sans';
-          font-weight: 700;
-          font-style: normal;
-          font-display: swap;
-          src: url('/fonts/OpenSans/static/OpenSans-Bold.ttf') format('truetype');
-      }
-
-      /* CSS custom‑colors */
-      :root
-      {
-        --ivory: white;
-        --green: #446266;
-        --light-green: #5d7f80;
-        --dark-green: #213438;
-      }
-
-      /* Base elements – no @apply */
-      body 
-      {
-        background-color: var(--dark-green);
-        color: var(--ivory);
-        font-family: 'Open Sans', sans-serif;
-        -webkit-font-smoothing: antialiased;
-        line-height: 1.625;
-      }
-      h1,
-      h2,
-      h3 
-      {
-        font-family: 'Open Sans', sans-serif;
-        letter-spacing: -0.02em; /* similar to tracking-tight */
-      }
-
-      /* Utility helper reused from earlier */
-      .font-brand 
-      {
-        font-family: 'Open Sans', sans-serif; 
-        font-weight: 700;
-      }
-
-      /* Parallax image rule – unchanged */
-      .parallax 
-      {
-        position: absolute;
-        top: 0;
-        left: 50%;
-        width: 120%;
-        height: 120%;
-        object-fit: cover;
-        transform: translateX(-50%);
-        will-change: transform;
-      }
-    </style>
-  </head>
-
-<body class="overflow-x-clip bg-[var(--dark-green)] text-[var(--ivory)] antialiased leading-relaxed">
-    <!--  Custom cursor bubble  -->
-    <div id="cursorBubble"
-        class="pointer-events-none fixed left-0 top-0 z-50
-                h-10 w-10 rounded-full           
-                bg-[var(--light-green)] opacity-75
-                mix-blend-difference
-                -translate-x-1/2 -translate-y-1/2
-                transition-transform duration-50 ease-linear
-                will-change-transform">
-    </div>
-
-    <!-- ================= Beginning ================= -->
-    <section class="relative h-screen flex items-center justify-center overflow-hidden">
-      <div class="fixed inset-0 pointer-events-none bg-gradient-to-b from-black/40 via-black/25 to-transparent mix-blend-multiply z-10"></div>
-      <div class="relative z-20 text-center px-4">
-        <p class="uppercase text-sm font-brand tracking-widest mb-6">welcome to</p>
-        <h1 class="text-4xl sm:text-6xl md:text-7xl font-normal mb-6 max-w-4xl mx-auto">
-          Marwan <span class="text-[var(--light-green)]">Luay's </span> Website
+    <section class="beginning-section">
+      <div class="beginning-section-overlay"></div>
+      <div class="beginning-section-content">
+        <p class="subtitle font-brand">welcome to</p>
+        <h1 class="title">
+          Marwan <span style="color: var(--light-green);">Luay's </span> Website
         </h1>
-        <p class="max-w-3xl mx-auto">
+        <p class="description">
           Made by yours truly
         </p>
       </div>
     </section>
 
-    <!-- ================= Content and stuff ================= -->
-    <main class="relative bg-[var(--green)] text-[var(--ivory)]">
-      <!-- ================= Intro! ================= -->
-      <section class="border-t border-[rgba(33,52,56,0.15)] grid lg:grid-cols-2 gap-10 px-5 md:px-10 py-16 lg:py-24">
+    <main class="main-content">
+      <section class="intro-section">
         <header>
-          <p class="uppercase text-xs font-brand tracking-widest mb-4">Accomplishments</p>
-          <h2 class="text-3xl md:text-4xl font-normal mb-8 max-w-xl">
-            I am currently a student at Green River College &amp; but I'm also a person with nerdy hobbies. Exceptionally nerdy hobbies.
+          <p class="subtitle font-brand">Who am I?</p>
+          <h2 class="title">
+            I am currently a student at Green River College &amp; on track for UW Tacoma/Seattle! Computer Engineering is my main interest. 
           </h2>
         </header>
-        <div class="prose max-w-none leading-relaxed">
+        <div class="prose">
           <p>
-            Some of these hobbies are mundane things like working out, tennis, modding game consoles I'll never touch again, and making edible slop. I also have a prius.
+            But who am I? I'm someone who likes the pain of working out, tennis, modding game consoles I'll never touch again, and making edible slop (Chicken + Rice + mystery ingrediants). I also have a prius.
           </p>
-           <figure class="italic text-sm opacity-80">
+           <figure>
             <blockquote>"Cool prius!"</blockquote>
-            <figcaption class="mt-2"> - Nobody</figcaption>
+            <figcaption> - Nobody</figcaption>
           </figure>
-          <ul class="font-semibold list-disc pl-6">
+          <ul>
             <li>
                 <a href="https://github.com/MarsLuay/Echo-Player" target="_blank" rel="noopener">I also am working on cool modular attachment for a hacking device to turn it into a mp3 player! Click me to see my progress</a>
             </li>
@@ -137,139 +48,129 @@
         </div>
       </section>
 
-      <!-- ================= Projects in progress ================= -->
-      <section class="border-t border-[rgba(33,52,56,0.15)] relative py-16 lg:py-28 px-5 md:px-10">
-        <div class="relative z-10 max-w-3xl mx-auto text-center mb-16">
-          <p class="uppercase text-xs font-brand tracking-widest mb-4">Accomplishments So Far</p>
-          <h2 class="text-3xl md:text-4xl font-normal">
-            Awards <span class="text-[var(--light-green)]">and </span> (Finished) Projects 
+      <section class="projects-section">
+        <div class="projects-header">
+          <p class="subtitle font-brand">Accomplishments So Far</p>
+          <h2 class="title">
+            Awards <span style="color: var(--light-green);">
           </h2>
         </div>
 
-        <div class="space-y-16 lg:space-y-24 [counter-reset:card]">
-          <!-- card 1 -->
-          <div class="relative bg-[var(--dark-green)] rounded-2xl overflow-hidden border border-[rgba(228,215,208,0.15)] shadow-lg max-w-4xl mx-auto flex flex-col lg:flex-row">
-            <img src="images/GRC.png" class="h-60 lg:h-auto lg:w-1/2 object-cover" />
-            <div class="p-8 lg:p-14 flex flex-col justify-center gap-6">
-              <p class="font-brand text-xs uppercase tracking-widest">01</p>
-              <h3 class="text-2xl font-normal">Dean's List</h3>
+        <div class="card-container">
+          <div class="card">
+            <img src="images/GRC.png" alt="Green River College Logo" />
+            <div class="card-content">
+              <p class="card-number font-brand">01</p>
+              <h3 class="card-title">Dean's List</h3>
               <p>4.0 at Green River College with over 70+ credits completed so far</p>
             </div>
           </div>
 
-          <!-- card 2 -->
-          <div class="relative bg-[var(--dark-green)] rounded-2xl overflow-hidden border border-[rgba(228,215,208,0.15)] shadow-lg max-w-4xl mx-auto flex flex-col lg:flex-row lg:flex-row-reverse">
-            <img src="images/JR.png"  class="h-60 lg:h-auto lg:w-1/2 object-cover" />
-            <div class="p-8 lg:p-14 flex flex-col justify-center gap-6">
-              <p class="font-brand text-xs uppercase tracking-widest">02</p>
-              <h3 class="text-2xl font-normal">Frank and Jeanne Rasmussen Scholarship</h3>
+          <div class="card reverse">
+            <img src="images/JR.png" alt="Scholarship Logo" />
+            <div class="card-content">
+              <p class="card-number font-brand">02</p>
+              <h3 class="card-title">Frank and Jeanne Rasmussen Scholarship</h3>
               <p>2025 Awardee</p>
             </div>
           </div>
 
-          <!-- card 3 -->
-          <div class="relative bg-[var(--dark-green)] rounded-2xl overflow-hidden border border-[rgba(228,215,208,0.15)] shadow-lg max-w-4xl mx-auto flex flex-col lg:flex-row">
-            <img src="images/WSOS.png" class="h-60 lg:h-auto lg:w-1/2 object-cover" />
-            <div class="p-8 lg:p-14 flex flex-col justify-center gap-6">
-              <p class="font-brand text-xs uppercase tracking-widest">03</p>
-              <h3 class="text-2xl font-normal">WSOS Scholarship</h3>
+          <div class="card">
+            <img src="images/WSOS.png" alt="WSOS Logo" />
+            <div class="card-content">
+              <p class="card-number font-brand">03</p>
+              <h3 class="card-title">WSOS Scholarship</h3>
               <p>Washington State Opportunity Scholarship 2025 awardee</p>
             </div>
           </div>
         </div>
       </section>
- <!-- Education -->
-      <section class="border-t border-[rgba(33,52,56,0.15)] py-16 lg:py-24 px-5 md:px-10">
-        <div class="max-w-5xl mx-auto">
-          <h2 class="text-3xl md:text-4xl font-normal mb-6">Education</h2>
-          <p class="prose prose-invert">
-            I graduated highschool in 2023 at Auburn Mountainview Highschool, and am currently at Green River College on a pathway to transfer in to the University of Washington aiming for a double major of Computer Engineering and Software.
-            <figure class="italic text-sm opacity-80 mt-6">
-                <figcaption class="mt-2"></figcaption> <!-- figure oiut a way to get spacing without this -->
-            </figure>
-            I have learned about Java, HTML, Calculus, Physics while completeing through my entire series of core classes at Green River, which has fully prepped me for specialized courses I will be taking for my next step.
-          </p>
-        </div>
-      </section>
 
-      <!-- RoadMap -->
-      <section class="border-t border-[rgba(33,52,56,0.15)] py-16 lg:py-24 px-5 md:px-10 bg-[var(--dark-green)]">
-        <div class="max-w-5xl mx-auto">
-          <h2 class="text-3xl md:text-4xl font-normal mb-6">Projects In Progress</h2>
-          <p class="prose prose-invert">
-              I'm in the middle of a few projects that are both to help me build experience, and for pure curiosity's sake to see if I can do it!
-          </p>
-        </div>
-      </section>
-
-      <!-- In progress Project 1 -->
-      <section class="border-t border-[rgba(33,52,56,0.15)] py-16 lg:py-24 px-5 md:px-10">
-        <div class="max-w-5xl mx-auto">
-          <h2 class="text-3xl md:text-4xl font-normal mb-6">1. Future Website Goal</h2>
-          <p class="prose prose-invert">
-              I am extremely interested in making a website that is similar to this dude's, <a href="https://bryantcodes.art/" target="_blank">https://bryantcodes.art/</a>
-              The moment I saw the way this website was structured, every neuron in my brain became inspiured and jealous, I need the skills to make something like that. That led me into researching how a website was created, which led into HTML, CSS, Tailwind, and surprisingly 3D models (Which I'm going to mess with next)
+      <section class="content-section">
+        <div class="content-wrapper">
+          <h2 class="title">Education</h2>
+          <div class="prose">
+            <p>
+              I graduated highschool in 2023 at Auburn Mountainview Highschool, and am currently at Green River College on a pathway to transfer in to the University of Washington aiming for a double major of Computer Engineering and Software.
             </p>
+            <figure>
+                <figcaption></figcaption> </figure>
+            <p>
+              I have learned about Java, HTML, Calculus, Physics while completeing through my entire series of core classes at Green River, which has fully prepped me for specialized courses I will be taking for my next step.
+            </p>
+          </div>
         </div>
       </section>
 
-      <!-- In progress Project 2 -->
-      <section class="border-t border-[rgba(33,52,56,0.15)] py-16 lg:py-24 px-5 md:px-10 bg-[var(--dark-green)]">
-        <div class="max-w-5xl mx-auto">
-          <h2 class="text-3xl md:text-4xl font-normal mb-6">2. Lenovo T14s Gen 1 Supervisor Password Removal</h2>
-          
-          <p class="prose prose-invert">
-            As I was digging in my garage one day, I found an old laptop my dad owned. I opened it up, and I found the equivalnet of an admin password completely locking down the computer. At the time, I really needed a laptop so I looked for ways ot bypass it. And in extremely uncertain terms I found a method called LPC bus shorting, which worked on previous models and hypothetically worked on this one, though no one commented they attempted it with my specific laptop's specs. I decided I wanted to change that. How it works is:
-          </p>
-          <ul class="font-semibold list-disc pl-6">
-             <li> Find what chip the password is stored in (the EC)</li>
-             <li> Find a slightly illegal schematic of your laptop's motherboard (not the same for every laptop)    </li>
-             <li> Go into the schematic using some sort of viewer, and find the lins you need to short the EC    </li>
-             <li> Short them for a split second while turning on the laptop and spam F1 or Enter to get into your BIOS    </li>
-             <li> Boom, done, now reset Supervisor password    </li>
-          </ul>
-          <p>
-            Thing is, it is really strict timing and I'm still trying to get it down before I finally make use of this laptop I don't even need anymore
-          </p>
+      <section class="content-section" style="background-color: var(--dark-green);">
+        <div class="content-wrapper">
+          <h2 class="title">Projects In Progress</h2>
         </div>
       </section>
 
-      <!-- In progress Project 3 -->
-      <section class="border-t border-[rgba(33,52,56,0.15)] py-16 lg:py-24 px-5 md:px-10">
-        <div class="max-w-5xl mx-auto">
-          <h2 class="text-3xl md:text-4xl font-normal mb-6">3. Turning a hacking device into a MP3 player</h2>
-          <p class="prose prose-invert">
-            I got a tiny device called the 
-            <a href="https://flipperzero.one/" target="_blank">Flipper Zero, a tiny little device that can pen test wifi and emulate NFC tags!</a> 
-            I mainly use it as a passkey for documents, to emulate amiibos when I play on my old switch, or even to record hotel keys to give myself an extra when I'm out traveling. I deepdived into the little thing and I found out that hypothetically become a music player, so why not make an attachment to it and make that a reality? The answer is it's hard. I'm talking electrical engineering with a fully finished bachelors hard, but I didn't let that stop me. So far in my drafts I researched what a common mp3 player would have hardware wise, and I ordered every single one of the aprts and a breadboard so i can get a prototype going before I fianlize the parts into a pre-built board I'd order from china. This includes the DAC module, the Lithium battery, the components of the AMP circuit, MicroSD slot, charging circuit. I got everything (Thank you Ali-Express), and it's soon to be put together so I can begin bug testing and creating software for real-world use. Personally excited for this one as it turns my expensive paperweight into something cool I always have a reason to carry with me.
-          
-          </p>
+      <section class="content-section">
+        <div class="content-wrapper">
+          <h2 class="title">1. Future Website Goal</h2>
+          <div class="prose">
+              <p>
+                  I've always been into cool websites, like thus guy's! <a href="https://bryantcodes.art/" target="_blank">https://bryantcodes.art/</a>
+                  Which led me to branching out from Java and exploring modern CSS, JavaScript, and HTML to make this website. Taking inspiration from Bryantcode, I'll be messing with 3D models next.
+              </p>
+          </div>
         </div>
       </section>
 
-        <!-- ================= Outro ================= -->
-    <section
-      id="outro"
-      class="bg-[var(--dark-green)] text-[var(--ivory)] border-t border-[rgba(33,52,56,0.15)] py-16 px-5 md:px-10"
-    >
-      <div class="max-w-2xl mx-auto text-center">
-        <h2 class="text-3xl md:text-4xl font-normal mb-4">
+      <section class="content-section" style="background-color: var(--dark-green);">
+        <div class="content-wrapper">
+          <h2 class="title">2. Lenovo T14s Gen 1 Supervisor Password Removal</h2>
+          <div class="prose">
+            <p>
+              As I was digging in my garage one day, I found an old laptop my dad owned. I opened it up, and I found the equivalent of an admin password completely locking down the computer. At the time, I really needed a laptop so I looked for ways ot bypass it. And in extremely uncertain terms I found a method called LPC bus shorting, which worked on previous models and hypothetically worked on this one, though no one commented they attempted it with my specific laptop's specs. I decided I wanted to change that. How it works is:
+            </p>
+            <ul>
+               <li> Find what chip the password is stored in (the EC)</li>
+               <li> Find a slightly illegal schematic of your laptop's motherboard (not the same for every laptop)    </li>
+               <li> Go into the schematic using some sort of viewer, and find the lins you need to short the EC    </li>
+               <li> Short them for a split second while turning on the laptop and spam F1 or Enter to get into your BIOS    </li>
+               <li> Boom, done, now reset Supervisor password    </li>
+            </ul>
+            <p>
+              Thing is, it is really strict timing and I'm still trying to get it down before I finally make use of this laptop I don't even need anymore
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <div class="content-wrapper">
+          <h2 class="title">3. Turning a hacking device into a MP3 player</h2>
+          <div class="prose">
+            <p>
+              I got a tiny device called the
+              <a href="https://flipperzero.one/" target="_blank">Flipper Zero, a tiny little device that can pen test wifi and emulate NFC tags!</a>
+              I mainly use it as a passkey for documents, to emulate amiibos when I play on my old switch, or even to record hotel keys to give myself an extra when I'm out traveling. I deepdived into the little thing and I found out that hypothetically become a music player, so why not make an attachment to it and make that a reality? The answer is it's hard. I'm talking electrical engineering with a fully finished bachelors hard, but I didn't let that stop me. So far in my drafts I researched what a common mp3 player would have hardware wise, and I ordered every single one of the aprts and a breadboard so i can get a prototype going before I fianlize the parts into a pre-built board I'd order from china. This includes the DAC module, the Lithium battery, the components of the AMP circuit, MicroSD slot, charging circuit. I got everything (Thank you Ali-Express), and it's soon to be put together so I can begin bug testing and creating software for real-world use. Personally excited for this one as it turns my expensive paperweight into something cool I always have a reason to carry with me.
+            </p>
+          </div>
+        </div>
+      </section>
+
+        <section id="outro" class="outro-section">
+      <div class="content-wrapper">
+        <h2 class="title">
           First iteration of my website, hope you enjoyed!
         </h2>
-        <p class="text-lg opacity-80">
-          I’ll be updating whenever I make strides in my projects, thanks for reading till the end <3
+        <p class="description">
+          I’ll be updating whenever I make strides in my projects, thanks for scrolling till the end!
         </p>
       </div>
     </section>
 
     </main>
 
-    <!-- ================= Footer ================= -->
-   <footer class="bg-[var(--dark-green)] text-[var(--ivory)] px-5 md:px-10 py-12 text-center">
-      <p class="text-xs opacity-60">©Mars Luay 2025.</p>
+    <footer>
+      <p>©Mars Luay 2025.</p>
     </footer>
 
-    <!-- ===== Parallax script ===== -->
     <script>
       const layers = document.querySelectorAll('.parallax');
       let ticking = false;
@@ -288,27 +189,23 @@
         }
       });
     </script>
-    <!-- ===== Custom cursor bubble script ===== -->
     <script>
-  const cursorBubble = document.getElementById('cursorBubble');
+      const cursorBubble = document.getElementById('cursorBubble');
 
-  // Re-use requestAnimationFrame for performance (similar to parallax code)
-  let bubbleTicking = false;
-  function moveBubble(x, y) 
-  {
-    cursorBubble.style.transform =
-      `translate(-50%, -50%) translate(${x}px, ${y}px)`;
-    bubbleTicking = false;
-  }
+      // Re-use requestAnimationFrame for performance (similar to parallax code)
+      let bubbleTicking = false;
+      function moveBubble(x, y) {
+        cursorBubble.style.transform = `translate(-50%, -50%) translate(${x}px, ${y}px)`;
+        bubbleTicking = false;
+      }
 
-  document.addEventListener('mousemove', (e) => 
-  {
-    if (!bubbleTicking) {
-      requestAnimationFrame(() => moveBubble(e.clientX, e.clientY));
-      bubbleTicking = true;
-    }
-  });
+      document.addEventListener('mousemove', (e) => {
+        if (!bubbleTicking) {
+          requestAnimationFrame(() => moveBubble(e.clientX, e.clientY));
+          bubbleTicking = true;
+        }
+      });
     </script>
 
-  </body>
+</body>
 </html>
