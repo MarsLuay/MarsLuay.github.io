@@ -11,48 +11,68 @@
 <body>
     <div id="cursorBubble"></div>
 
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="#" class="nav-logo">Mars Luay</a>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="#about" class="nav-link">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="#accomplishments" class="nav-link">Accomplishments</a>
+          </li>
+          <li class="nav-item">
+            <a href="#projects" class="nav-link">Projects</a>
+          </li>
+           <li class="nav-item">
+            <a href="#contact" class="nav-link">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
     <section class="beginning-section">
       <div class="beginning-section-overlay"></div>
       <div class="beginning-section-content">
-        <p class="subtitle font-brand">welcome to</p>
+        <p class="subtitle font-brand">Welcome to</p>
         <h1 class="title">
           Marwan <span style="color: var(--light-green);">Luay's </span> Website
         </h1>
         <p class="description">
-          Made by yours truly
+          Made by yours truly.
         </p>
       </div>
     </section>
 
     <main class="main-content">
-      <section class="intro-section">
+      <section class="intro-section" id="about">
         <header>
           <p class="subtitle font-brand">Who am I?</p>
           <h2 class="title">
-            I am currently a student at Green River College &amp; on track for UW Tacoma/Seattle! Computer Engineering is my main interest. 
+            I am currently a student at Green River College and on track to transfer to UW Tacoma/Seattle! Computer Engineering is my main interest.
           </h2>
         </header>
         <div class="prose">
           <p>
-            But who am I? I'm someone who likes the pain of working out, tennis, modding game consoles I'll never touch again, and making edible slop (Chicken + Rice + mystery ingrediants). I also have a prius.
+            But who am I? I'm someone who likes the pain of working out, tennis, modding game consoles I'll probably never touch again, and making edible slop (chicken + rice + mystery ingredients). I also have a Prius.
           </p>
            <figure>
-            <blockquote>"Cool prius!"</blockquote>
+            <blockquote>"Cool Prius!"</blockquote>
             <figcaption> - Nobody</figcaption>
           </figure>
           <ul>
             <li>
-                <a href="https://github.com/MarsLuay/Echo-Player" target="_blank" rel="noopener">I also am working on cool modular attachment for a hacking device to turn it into a mp3 player! Click me to see my progress</a>
+                <a href="https://github.com/MarsLuay/Echo-Player" target="_blank" rel="noopener">I am also working on a cool modular attachment for a hacking device to turn it into an MP3 player! Click to see my progress.</a>
             </li>
           </ul>
         </div>
       </section>
 
-      <section class="projects-section">
+      <section class="projects-section" id="accomplishments">
         <div class="projects-header">
           <p class="subtitle font-brand">Accomplishments So Far</p>
           <h2 class="title">
-            Awards 
+            Awards <span style="color: var(--light-green);"></span>
           </h2>
         </div>
 
@@ -62,7 +82,7 @@
             <div class="card-content">
               <p class="card-number font-brand">01</p>
               <h3 class="card-title">Dean's List</h3>
-              <p>4.0 at Green River College with over 70+ credits completed so far</p>
+              <p>4.0 at Green River College with over 70 credits completed so far</p>
             </div>
           </div>
 
@@ -71,7 +91,7 @@
             <div class="card-content">
               <p class="card-number font-brand">02</p>
               <h3 class="card-title">Frank and Jeanne Rasmussen Scholarship</h3>
-              <p>2025 Awardee</p>
+              <p>2025 awardee</p>
             </div>
           </div>
 
@@ -86,23 +106,21 @@
         </div>
       </section>
 
-      <section class="content-section">
+      <section class="content-section" id="education">
         <div class="content-wrapper">
           <h2 class="title">Education</h2>
           <div class="prose">
             <p>
-              I graduated highschool in 2023 at Auburn Mountainview Highschool, and am currently at Green River College on a pathway to transfer in to the University of Washington aiming for a double major of Computer Engineering and Software.
+              I graduated from Auburn Mountainview High School in 2023, and I am currently at Green River College on a pathway to transfer to the University of Washington, aiming for a double major in Computer Engineering and Software.
             </p>
-            <figure>
-                <figcaption></figcaption> </figure>
             <p>
-              I have learned about Java, HTML, Calculus, Physics while completeing through my entire series of core classes at Green River, which has fully prepped me for specialized courses I will be taking for my next step.
+              I have learned Java, HTML, calculus, and physics while completing my core classes at Green River, which has fully prepared me for the specialized courses I will be taking next.
             </p>
           </div>
         </div>
       </section>
 
-      <section class="content-section dark">        
+      <section class="content-section dark" id="projects">
         <div class="content-wrapper">
           <h2 class="title">Projects In Progress</h2>
         </div>
@@ -113,8 +131,8 @@
           <h2 class="title">1. Future Website Goal</h2>
           <div class="prose">
               <p>
-                  I've always been into cool websites, like thus guy's! <a href="https://bryantcodes.art/" target="_blank">https://bryantcodes.art/</a>
-                  Which led me to branching out from Java and exploring modern CSS, JavaScript, and HTML to make this website. Taking inspiration from Bryantcode, I'll be messing with 3D models next.
+                  I've always been into cool websites, like this guy's! <a href="https://bryantcodes.art/" target="_blank">https://bryantcodes.art/</a>
+                  Which led me to branch out from Java and explore modern CSS, JavaScript, and HTML to make this website. Taking inspiration from Bryantcodes, I'll be experimenting with 3D models next.
               </p>
           </div>
         </div>
@@ -125,17 +143,17 @@
           <h2 class="title">2. Lenovo T14s Gen 1 Supervisor Password Removal</h2>
           <div class="prose">
             <p>
-              As I was digging in my garage one day, I found an old laptop my dad owned. I opened it up, and I found the equivalent of an admin password completely locking down the computer. At the time, I really needed a laptop so I looked for ways ot bypass it. And in extremely uncertain terms I found a method called LPC bus shorting, which worked on previous models and hypothetically worked on this one, though no one commented they attempted it with my specific laptop's specs. I decided I wanted to change that. How it works is:
+              As I was digging in my garage one day, I found an old laptop my dad owned. I opened it up and found the equivalent of an admin password completely locking down the computer. At the time, I really needed a laptop, so I looked for ways to bypass it. And, in uncertain terms, I found a method called LPC bus shorting, which worked on previous models and hypothetically worked on this one, though no one had reported attempting it with my specific laptop's specs. I decided I wanted to change that. How it works is:
             </p>
             <ul>
-               <li> Find what chip the password is stored in (the EC)</li>
-               <li> Find a slightly illegal schematic of your laptop's motherboard (not the same for every laptop)    </li>
-               <li> Go into the schematic using some sort of viewer, and find the lins you need to short the EC    </li>
-               <li> Short them for a split second while turning on the laptop and spam F1 or Enter to get into your BIOS    </li>
-               <li> Boom, done, now reset Supervisor password    </li>
+               <li> Find which chip the password is stored in (the EC).</li>
+               <li> Find a slightly illegal schematic of your laptop's motherboard (not the same for every laptop).</li>
+               <li> Open the schematic using some sort of viewer, and find the lines you need to short on the EC.</li>
+               <li> Short them for a split second while turning on the laptop, and spam F1 or Enter to get into the BIOS.</li>
+               <li> Boom—done. Now reset the Supervisor password.</li>
             </ul>
             <p>
-              Thing is, it is really strict timing and I'm still trying to get it down before I finally make use of this laptop I don't even need anymore
+              The thing is the timing is really strict, and I'm still trying to get it down before I can finally make use of this laptop I don't even need anymore.
             </p>
           </div>
         </div>
@@ -143,16 +161,30 @@
 
       <section class="content-section">
         <div class="content-wrapper">
-          <h2 class="title">3. Turning a hacking device into a MP3 player</h2>
+          <h2 class="title">3. Turning a hacking device into an MP3 player</h2>
           <div class="prose">
             <p>
-              I got a tiny device called the
-              <a href="https://flipperzero.one/" target="_blank">Flipper Zero, a tiny little device that can pen test wifi and emulate NFC tags!</a>
-              I mainly use it as a passkey for documents, to emulate amiibos when I play on my old switch, or even to record hotel keys to give myself an extra when I'm out traveling. I deepdived into the little thing and I found out that hypothetically become a music player, so why not make an attachment to it and make that a reality? The answer is it's hard. I'm talking electrical engineering with a fully finished bachelors hard, but I didn't let that stop me. So far in my drafts I researched what a common mp3 player would have hardware wise, and I ordered every single one of the aprts and a breadboard so i can get a prototype going before I fianlize the parts into a pre-built board I'd order from china. This includes the DAC module, the Lithium battery, the components of the AMP circuit, MicroSD slot, charging circuit. I got everything (Thank you Ali-Express), and it's soon to be put together so I can begin bug testing and creating software for real-world use. Personally excited for this one as it turns my expensive paperweight into something cool I always have a reason to carry with me.
+              I got a device called the
+              <a href="https://flipperzero.one/" target="_blank">Flipper Zero, which can pentest Wi-Fi and emulate NFC tags!</a>
+              I mainly use it as a passkey for documents, to emulate Amiibo when I play on my old Switch, or even to record hotel keys to give myself an extra copy when I'm traveling. I dove deep into it and found that it could hypothetically become a music player, so why not make an attachment and make that a reality? The answer: it's hard—like “electrical engineering bachelor's degree” hard. So far in my drafts, I researched what a common MP3 player would include hardware-wise, and I ordered every single one of the parts and a breadboard so I can get a prototype going before I finalize the parts into a pre-built board I'd order from China. This includes the DAC module, the lithium battery, the components of the amp circuit, MicroSD slot, and charging circuit. I got everything (thank you, AliExpress), and it's soon to be put together so I can begin bug testing and creating software for real-world use. I'm especially excited for this one, as it turns my expensive paperweight into something cool I always have a reason to carry.
             </p>
           </div>
         </div>
       </section>
+      
+        <section class="content-section" id="contact">
+          <div class="content-wrapper" style="text-align: center;">
+            <h2 class="title">Get In Touch</h2>
+            <p class="prose">
+              I'm always open to new opportunities! <br>
+              Feel free to reach out through email or connect with me on LinkedIn!
+            </p>
+            <div style="margin-top: 2rem;">
+              <a href="mailto:youremail@example.com" class="contact-link">Email Me</a>
+              <a href="https://www.linkedin.com/in/marwan-luay/" target="_blank" class="contact-link">LinkedIn</a>
+            </div>
+          </div>
+        </section>
 
         <section id="outro" class="outro-section">
       <div class="content-wrapper">
@@ -160,7 +192,7 @@
           First iteration of my website, hope you enjoyed!
         </h2>
         <p class="description">
-          I’ll be updating whenever I make strides in my projects, thanks for scrolling till the end!
+          I’ll be updating whenever I make strides in my projects, thanks for scrolling to the end!
         </p>
       </div>
     </section>
@@ -168,7 +200,7 @@
     </main>
 
     <footer>
-      <p>©Mars Luay 2025.</p>
+      <p>© Mars Luay 2025.</p>
     </footer>
 
     <script>
