@@ -1,233 +1,344 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mars Luay</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio - Computer Engineering Student @ Green River College">
+    <title>Mars's Website</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    
+    <style>
+		body
+		{
+			background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 100%);
+			color: #e0e0e0;
+			font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+		}
 
-    <link rel="stylesheet" href="./style.css">
+		/* keep all main content above the blob layer */
+		body > section,
+		body > footer
+		{
+			position: relative;
+			z-index: 1;
+		}
+		
+		#blob
+		{
+			position: fixed;
+			left: 0;
+			top: 0;
+			z-index: 0;
+			filter: blur(40px);
+			opacity: 0.7;
+			pointer-events: none;
+			will-change: transform;
+		}
+		
+		.project-card
+		{
+			background: rgba(255, 255, 255, 0.05);
+			backdrop-filter: blur(10px);
+			border: 1px solid rgba(255, 255, 255, 0.1);
+			transition: all 0.3s ease;
+		}
+		
+		.project-card:hover
+		{
+			background: rgba(255, 255, 255, 0.1);
+			transform: translateY(-8px);
+			border-color: #00d9ff;
+		}
+		
+		.accent
+		{
+			color: #00d9ff;
+		}
+		
+		.btn-primary
+		{
+			background: linear-gradient(135deg, #00d9ff 0%, #0099cc 100%);
+			color: #0f0f1e;
+			font-weight: 600;
+			padding: 12px 32px;
+			border-radius: 8px;
+			transition: all 0.3s ease;
+			display: inline-block;
+			text-decoration: none;
+		}
+		
+		.btn-primary:hover
+		{
+			transform: scale(1.05);
+			box-shadow: 0 8px 24px rgba(0, 217, 255, 0.3);
+		}
+    </style>
 </head>
-
-<body>
-    <div id="cursorBubble"></div>
-
-    <nav class="navbar">
-      <div class="nav-container">
-        <a href="#" class="nav-logo">Mars Luay</a>
-        <ul class="nav-menu">
-          <li class="nav-item">
-            <a href="#about" class="nav-link">About</a>
-          </li>
-          <li class="nav-item">
-            <a href="#accomplishments" class="nav-link">Accomplishments</a>
-          </li>
-          <li class="nav-item">
-            <a href="#projects" class="nav-link">Projects</a>
-          </li>
-           <li class="nav-item">
-            <a href="#contact" class="nav-link">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
-    <section class="beginning-section">
-      <div class="beginning-section-overlay"></div>
-      <div class="beginning-section-content">
-        <p class="subtitle font-brand">Welcome to</p>
-        <h1 class="title">
-          Marwan <span style="color: var(--light-green);">Luay's </span> Website
-        </h1>
-        <p class="description">
-          Made by yours truly.
-        </p>
-      </div>
+<body class="min-h-screen">
+    
+    <section id="hero" class="relative flex items-center justify-center min-h-screen overflow-hidden">
+        <svg id="blob" width="600" height="600" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="blobGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#00d9ff;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#7b2ff7;stop-opacity:1" />
+                </linearGradient>
+            </defs>
+            <path id="blobPath" fill="url(#blobGradient)">
+                <animate attributeName="d" dur="10s" repeatCount="indefinite"
+                    values="
+                        M300,200 Q400,250 400,350 Q400,450 300,500 Q200,450 200,350 Q200,250 300,200;
+                        M300,150 Q450,250 450,350 Q450,450 300,550 Q150,450 150,350 Q150,250 300,150;
+                        M300,180 Q420,230 420,350 Q420,470 300,520 Q180,470 180,350 Q180,230 300,180;
+                        M300,200 Q400,250 400,350 Q400,450 300,500 Q200,450 200,350 Q200,250 300,200"
+                />
+            </path>
+        </svg>
+        
+        <div class="relative z-10 text-center px-6">
+            <h1 class="text-6xl md:text-8xl font-bold mb-6">
+                Hi, I'm <span class="accent">Mars</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                Computer Engineering Student @ Green River College
+            </p>
+            <div class="flex gap-4 justify-center">
+                <a href="#about" class="btn-primary">About Me</a>
+                <a href="#projects" class="btn-primary">Projects</a>
+                <a href="#contact" class="btn-primary" style="background: rgba(255,255,255,0.1); color: #00d9ff;">Contact</a>
+            </div>
+        </div>
     </section>
-
-    <main class="main-content">
-      <section class="intro-section" id="about">
-        <header>
-          <p class="subtitle font-brand">Who am I?</p>
-          <h2 class="title">
-            I am currently a student at Green River College and on track to transfer to UW Tacoma/Seattle! Computer Engineering is my main interest.
-          </h2>
-        </header>
-        <div class="prose">
-          <p>
-            But who am I? I'm someone who likes the pain of working out, tennis, modding game consoles I'll probably never touch again, and making edible slop (chicken + rice + mystery ingredients). I also have a Prius.
-          </p>
-           <figure>
-            <blockquote>"Cool Prius!"</blockquote>
-            <figcaption> - Nobody</figcaption>
-          </figure>
-          <ul>
-            <li>
-                <a href="https://github.com/MarsLuay/Echo-Player" target="_blank" rel="noopener">I am also working on a cool modular attachment for a hacking device to turn it into an MP3 player! Click to see my progress.</a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-       <section class="content-section dark" id="education">
-        <div class="content-wrapper">
-          <h2 class="title">Education</h2>
-          <div class="prose">
-            <p>
-              I graduated from Auburn Mountainview High School in 2023, and I am currently at Green River College on a pathway to transfer to the University of Washington, aiming for a double major in Computer Engineering and Software.
-            </p>
-            <p>
-              I have learned Java, HTML, calculus, and physics while completing my core classes at Green River, which has fully prepared me for the specialized courses I will be taking next.
-            </p>
-          </div>
-        </div>
-      </section>
-      
-      <section class="projects-section" id="accomplishments">
-        <div class="projects-header">
-          <p class="subtitle font-brand">Accomplishments So Far</p>
-          <h2 class="title">
-            Awards <span style="color: var(--light-green);"></span>
-          </h2>
-        </div>
-
-        <div class="card-container">
-          <div class="card">
-            <img src="images/GRC.png" alt="Green River College Logo" />
-            <div class="card-content">
-              <p class="card-number font-brand">01</p>
-              <h3 class="card-title">Dean's List</h3>
-              <p>4.0 at Green River College with over 70 credits completed so far</p>
+    
+    <section id="about" class="py-20 px-6 bg-black/30">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                
+                <div>
+                    <h2 class="text-5xl font-bold mb-6">
+                        About <span class="accent">Me</span>
+                    </h2>
+                    <p class="text-xl text-gray-300 mb-4">
+                        I'm a computer engineering student @ GRC! I'm very into custom hardware (Like my Flipper Project!) and making tools that I genuinely use (Spotify FLAC downloader)!
+                    </p>
+                    <p class="text-lg text-gray-400 mb-8">
+                        I'm experimenting with a bunch of projects at the moment, and right now my most current one is the Gator Guide! A soon to be released app for transfer students at my college.
+                    </p>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold mb-4">Tools I've worked with</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <p class="text-cyan-400 font-semibold">Frontend</p>
+                                <p class="text-gray-400">HTML, CSS, JavaScript, Tailwind</p>
+                            </div>
+                            <div>
+                                <p class="text-cyan-400 font-semibold">Backend</p>
+                                <p class="text-gray-400">Python, Java, APIs</p>
+                            </div>
+                            <div>
+                                <p class="text-cyan-400 font-semibold">Hardware</p>
+                                <p class="text-gray-400">KiCad, PCB Design, Electronics</p>
+                            </div>
+                            <div>
+                                <p class="text-cyan-400 font-semibold">Tools</p>
+                                <p class="text-gray-400">Git, Linux, Obsidian</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-2xl font-bold mb-8">Current Coursework</h3>
+                    <div class="space-y-6">
+                        <div class="project-card rounded-xl p-6">
+                            <h4 class="text-xl font-bold mb-2">Calculus 4 (Math& 254)</h4>
+                            <p class="text-gray-400">Multivariable calculus - vectors, partial derivatives, chain rule, directional derivatives</p>
+                        </div>
+                        <div class="project-card rounded-xl p-6">
+                            <h4 class="text-xl font-bold mb-2">Computer Science 3 (CS 123)</h4>
+                            <p class="text-gray-400">Data structures in Java - arrays, linked lists, trees, algorithms</p>
+                        </div>
+                        <div class="project-card rounded-xl p-6">
+                            <h4 class="text-xl font-bold mb-2">Differential Equations (Math& 223)</h4>
+                            <p class="text-gray-400">Modeling with differential equations - applications in physics and engineering</p>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
-          </div>
-
-          <div class="card reverse">
-            <img src="images/JR.png" alt="Scholarship Logo" />
-            <div class="card-content">
-              <p class="card-number font-brand">02</p>
-              <h3 class="card-title">Frank and Jeanne Rasmussen Scholarship</h3>
-              <p>2025 awardee</p>
-            </div>
-          </div>
-
-          <div class="card">
-            <img src="images/WSOS.png" alt="WSOS Logo" />
-            <div class="card-content">
-              <p class="card-number font-brand">03</p>
-              <h3 class="card-title">WSOS Scholarship</h3>
-              <p>Washington State Opportunity Scholarship 2025 awardee</p>
-            </div>
-          </div>
         </div>
-      </section>
-
-      <section class="content-section dark" id="projects">
-        <div class="content-wrapper">
-          <h2 class="title">Projects In Progress</h2>
-        </div>
-      </section>
-
-      <section class="content-section">
-        <div class="content-wrapper">
-          <h2 class="title">1. Future Website Goal</h2>
-          <div class="prose">
-              <p>
-                  I've always been into cool websites, like this guy's! <a href="https://bryantcodes.art/" target="_blank">https://bryantcodes.art/</a>
-                  Which led me to branch out from Java and explore modern CSS, JavaScript, and HTML to make this website. Taking inspiration from Bryantcodes, I'll be experimenting with 3D models next.
-              </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="content-section">
-        <div class="content-wrapper">
-          <h2 class="title">2. Lenovo T14s Gen 1 Supervisor Password Removal</h2>
-          <div class="prose">
-            <p>
-              As I was digging in my garage one day, I found an old laptop my dad owned. I opened it up and found the equivalent of an admin password completely locking down the computer. At the time, I really needed a laptop, so I looked for ways to bypass it. And, in uncertain terms, I found a method called LPC bus shorting, which worked on previous models and hypothetically worked on this one, though no one had reported attempting it with my specific laptop's specs. I decided I wanted to change that. How it works is:
-            </p>
-            <ul>
-               <li> Find which chip the password is stored in (the EC).</li>
-               <li> Find a slightly illegal schematic of your laptop's motherboard (not the same for every laptop).</li>
-               <li> Open the schematic using some sort of viewer, and find the lines you need to short on the EC.</li>
-               <li> Short them for a split second while turning on the laptop, and spam F1 or Enter to get into the BIOS.</li>
-               <li> Boom—done. Now reset the Supervisor password.</li>
-            </ul>
-            <p>
-              The thing is the timing is really strict, and I'm still trying to get it down before I can finally make use of this laptop I don't even need anymore.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="content-section">
-        <div class="content-wrapper">
-          <h2 class="title">3. Turning a hacking device into an MP3 player</h2>
-          <div class="prose">
-            <p>
-              I got a device called the
-              <a href="https://flipperzero.one/" target="_blank">Flipper Zero, which can pentest Wi-Fi and emulate NFC tags!</a>
-              I mainly use it as a passkey for documents, to emulate Amiibo when I play on my old Switch, or even to record hotel keys to give myself an extra copy when I'm traveling. I dove deep into it and found that it could hypothetically become a music player, so why not make an attachment and make that a reality? The answer: it's hard—like “electrical engineering bachelor's degree” hard. So far in my drafts, I researched what a common MP3 player would include hardware-wise, and I ordered every single one of the parts and a breadboard so I can get a prototype going before I finalize the parts into a pre-built board I'd order from China. This includes the DAC module, the lithium battery, the components of the amp circuit, MicroSD slot, and charging circuit. I got everything (thank you, AliExpress), and it's soon to be put together so I can begin bug testing and creating software for real-world use. I'm especially excited for this one, as it turns my expensive paperweight into something cool I always have a reason to carry.
-            </p>
-          </div>
-        </div>
-      </section>
-      
-        <section id="outro" class="outro-section">
-          <div class="content-wrapper">
-            <h2 class="title">
-              First iteration of my website, hope you enjoyed!
+    </section>
+    
+    <section id="projects" class="py-20 px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-5xl font-bold text-center mb-16">
+                Featured <span class="accent">Projects</span>
             </h2>
-          <p class="description">
-              Feel free to reach out through email or connect with me on LinkedIn!
-          </p>
-          <div style="margin-top: 2rem;">
-              <a href="mailto:marwanluay2005@gmail.com" class="contact-link">Email Me</a>
-              <a href="https://www.linkedin.com/in/marwan-luay/" target="_blank" class="contact-link">LinkedIn</a>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div class="project-card rounded-xl p-6">
+                    <h3 class="text-2xl font-bold mb-3 accent">Gator Guide</h3>
+                    <p class="text-gray-400 mb-4">
+                        A soon-to-be released app for transfer students at Green River College. Built to make it easier to navigate resources, planning, and student life in one place.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-xs bg-orange-500/20 text-orange-300 px-3 py-1 rounded-full">App</span>
+                        <span class="text-xs bg-orange-500/20 text-orange-300 px-3 py-1 rounded-full">Green River</span>
+                        <span class="text-xs bg-orange-500/20 text-orange-300 px-3 py-1 rounded-full">Students</span>
+                    </div>
+                    <a href="https://github.com/MarsLuay/GatorGuide" class="text-cyan-400 hover:text-cyan-300 transition">View on GitHub</a>
+                </div>
+                
+                <div class="project-card rounded-xl p-6">
+                    <h3 class="text-2xl font-bold mb-3 accent">Personal Website</h3>
+                    <p class="text-gray-400 mb-4">
+                        Interactive portfolio with morphing blob animation, built with Tailwind CSS and anime.js. The site you're looking at right now!
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-xs bg-cyan-500/20 text-cyan-300 px-3 py-1 rounded-full">HTML</span>
+                        <span class="text-xs bg-cyan-500/20 text-cyan-300 px-3 py-1 rounded-full">Tailwind</span>
+                        <span class="text-xs bg-cyan-500/20 text-cyan-300 px-3 py-1 rounded-full">anime.js</span>
+                    </div>
+                    <a href="https://github.com/MarsLuay/MarsLuay.github.io" class="text-cyan-400 hover:text-cyan-300 transition">View on GitHub</a>
+                </div>
+                
+                <div class="project-card rounded-xl p-6">
+                    <h3 class="text-2xl font-bold mb-3 accent">Spotify FLAC Downloader</h3>
+                    <p class="text-gray-400 mb-4">
+                        Python CLI that translates Spotify playlists to Deezer equivalents and downloads lossless FLAC files. Includes fuzzy matching for song translation.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-xs bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full">Python</span>
+                        <span class="text-xs bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full">Spotify API</span>
+                        <span class="text-xs bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full">Audio</span>
+                    </div>
+                    <a href="#" class="text-cyan-400 hover:text-cyan-300 transition">In Development</a>
+                </div>
+                
+                <div class="project-card rounded-xl p-6">
+                    <h3 class="text-2xl font-bold mb-3 accent">Flipper FLAC Player</h3>
+                    <p class="text-gray-400 mb-4">
+                        Custom PCB module adding lossless audio playback to Flipper Zero. Uses DFPlayer Mini decoder and TPA6132 headphone amplifier.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-xs bg-green-500/20 text-green-300 px-3 py-1 rounded-full">KiCad</span>
+                        <span class="text-xs bg-green-500/20 text-green-300 px-3 py-1 rounded-full">Hardware</span>
+                        <span class="text-xs bg-green-500/20 text-green-300 px-3 py-1 rounded-full">Audio</span>
+                    </div>
+                    <a href="#" class="text-cyan-400 hover:text-cyan-300 transition">In Development</a>
+                </div>
+
+                <div class="project-card rounded-xl p-6">
+                    <h3 class="text-2xl font-bold mb-3 accent">Steam Deck Dual-Boot</h3>
+                    <p class="text-gray-400 mb-4">
+                        Complete guide for running SteamOS + Windows 11 on external storage. Includes partitioning, installation, and troubleshooting procedures.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-xs bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full">Linux</span>
+                        <span class="text-xs bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full">Hardware</span>
+                        <span class="text-xs bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full">Guide</span>
+                    </div>
+                    <a href="#" class="text-cyan-400 hover:text-cyan-300 transition">In Development</a>
+                </div>
+
+                <div class="project-card rounded-xl p-6">
+                    <h3 class="text-2xl font-bold mb-3 accent">Lenovo BIOS Flashing</h3>
+                    <p class="text-gray-400 mb-4">
+                        CH341A programmer guide for T14s Gen 1 BIOS backup/flashing. Includes safety checklist, troubleshooting, and recovery procedures.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-xs bg-red-500/20 text-red-300 px-3 py-1 rounded-full">Hardware</span>
+                        <span class="text-xs bg-red-500/20 text-red-300 px-3 py-1 rounded-full">Guide</span>
+                        <span class="text-xs bg-red-500/20 text-red-300 px-3 py-1 rounded-full">Safety</span>
+                    </div>
+                    <a href="#" class="text-cyan-400 hover:text-cyan-300 transition">In Development</a>
+                </div>
+                
             </div>
         </div>
-      </section>
-
-    </main>
-
-    <footer>
-      <p>© Mars Luay 2025.</p>
+    </section>
+    
+    <section id="contact" class="py-20 px-6">
+        <div class="max-w-2xl mx-auto text-center">
+            <h2 class="text-5xl font-bold mb-8">
+                Let's <span class="accent">Connect</span>
+            </h2>
+            <p class="text-xl text-gray-400 mb-8">
+                Feel free to contact me with the links below!
+            </p>
+            <div class="flex gap-6 justify-center">
+                <a href="https://github.com/MarsLuay" class="text-gray-400 hover:text-cyan-400 transition text-lg">GitHub</a>
+                <a href="mailto:marwanluay2005@gmail.com" class="text-gray-400 hover:text-cyan-400 transition text-lg">Email</a>
+                <a href="https://www.linkedin.com/in/marwan-luay/" class="text-gray-400 hover:text-cyan-400 transition text-lg">LinkedIn</a>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="py-8 text-center text-gray-500 border-t border-gray-800">
+        <p>Consumed 3000~ mg's of caffeine in production of this site.</p>
     </footer>
-
+    
     <script>
-      const layers = document.querySelectorAll('.parallax');
-      let ticking = false;
-      function updateParallax() {
-        const y = window.scrollY;
-        layers.forEach((el) => {
-          const speed = parseFloat(el.dataset.speed) || 0;
-          el.style.transform = `translate3d(-50%, ${-(y * speed)}px, 0)`;
-        });
-        ticking = false;
-      }
-      window.addEventListener('scroll', () => {
-        if (!ticking) {
-          requestAnimationFrame(updateParallax);
-          ticking = true;
-        }
-      });
+		const blob = document.getElementById('blob');
+		const blobHalfWidth = blob.viewBox.baseVal.width / 2;
+		const blobHalfHeight = blob.viewBox.baseVal.height / 2;
+		let mouseX = 0;
+		let mouseY = 0;
+		let currentX = 0;
+		let currentY = 0;
+
+		function setBlobTargetToViewportCenter()
+		{
+			mouseX = window.innerWidth / 2;
+			mouseY = window.innerHeight / 2;
+		}
+
+		// follow the cursor anywhere on the page
+		document.addEventListener('pointermove', (e) =>
+		{
+			mouseX = e.clientX;
+			mouseY = e.clientY;
+		});
+
+		window.addEventListener('resize', setBlobTargetToViewportCenter);
+
+		function animateBlob()
+		{
+			currentX += (mouseX - currentX) * 0.08;
+			currentY += (mouseY - currentY) * 0.08;
+
+			blob.style.transform = `translate(${currentX - blobHalfWidth}px, ${currentY - blobHalfHeight}px)`;
+			requestAnimationFrame(animateBlob);
+		}
+
+		setBlobTargetToViewportCenter();
+		currentX = mouseX;
+		currentY = mouseY;
+		animateBlob();
+		
+		document.querySelectorAll('a[href^="#"]').forEach(anchor =>
+		{
+			anchor.addEventListener('click', function (e)
+			{
+				const targetSelector = this.getAttribute('href');
+				if(!targetSelector || targetSelector === '#')
+				{
+					return;
+				}
+
+				e.preventDefault();
+				const target = document.querySelector(targetSelector);
+				if(target)
+				{
+					target.scrollIntoView({behavior: 'smooth'});
+				}
+			});
+		});
     </script>
-    <script>
-      const cursorBubble = document.getElementById('cursorBubble');
-
-      // Re-use requestAnimationFrame for performance (similar to parallax code)
-      let bubbleTicking = false;
-      function moveBubble(x, y) {
-        cursorBubble.style.transform = `translate(-50%, -50%) translate(${x}px, ${y}px)`;
-        bubbleTicking = false;
-      }
-
-      document.addEventListener('mousemove', (e) => {
-        if (!bubbleTicking) {
-          requestAnimationFrame(() => moveBubble(e.clientX, e.clientY));
-          bubbleTicking = true;
-        }
-      });
-    </script>
-
+    
 </body>
 </html>
