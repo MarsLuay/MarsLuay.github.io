@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "operation": "repro",
+  "status": "failed",
+  "root": "/Users/mars/ObsidianNotes/.Projects/MarsLuay.github.io",
+  "command": [
+    "npm",
+    "test"
+  ],
+  "exit_code": 1,
+  "timed_out": false,
+  "duration_ms": 122.4,
+  "stdout": "\n> marsluay.github.io@1.0.0 test\n> echo \"Error: no test specified\" && exit 1\n\nError: no test specified\n",
+  "stderr": "",
+  "report_path": "/Users/mars/ObsidianNotes/.Projects/MarsLuay.github.io/.agent-state/diagnostics/repro-npm-test.json"
+}
