@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "projectMemory": {
-    "taskPath": "PROJECT-TASKS.json",
+    "taskPath": "docs/project-memory/PROJECT-TASKS.json",
     "candidatePath": "docs/project-memory/candidates.jsonl",
     "verifiedPath": "docs/project-memory/verified.jsonl",
     "humanReadablePaths": [
@@ -12,7 +12,7 @@
     ]
   },
   "taskLedger": {
-    "path": "PROJECT-TASKS.md",
+    "path": "docs/project-memory/PROJECT-TASKS.md",
     "section": "Durable tasks"
   },
   "routes": [
